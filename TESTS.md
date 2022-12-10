@@ -20,3 +20,7 @@ Expected Output: ['pepperoni']
 Test: "It should not add an excess element to the array if it is already present"
 Code: pepCheck.addEventListener('change', e=>{});
 Expected Output: ['pepperoni']
+
+Test: "It should remove the topping when the box is unchecked"
+Code: pepCheck.addEventListener('change', e=>{});
+Expected Output: []
