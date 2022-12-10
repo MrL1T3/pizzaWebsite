@@ -11,16 +11,20 @@ window.addEventListener('load', (event) =>{
 
   const pepCheck = document.getElementById('pepperoni');
   pepCheck.addEventListener('change', e=>{
-    if(e.target.checked){
+    if(e.target.checked === true){
       if (myPizza.toppingslist.includes('pepperoni')){
         console.log('That item is already selected!')
       }
       else {
         myPizza.toppingslist.push('pepperoni')
       }
-      
-
       gatherToppings();
+    }
+    else if (e.target.checked === false){
+      if (myPizza.toppingslist.includes('pepperoni')){
+        myPizza.toppingslist.splice(myPizza.toppingslist.indexOf('pepperoni'), 1)
+      }
+      gatherToppings
     }
   });
 
