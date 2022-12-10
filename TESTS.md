@@ -11,3 +11,8 @@ Test: "It should log the toppingsList property of the myPizza object in the cons
 Code: gatherToppings(myPizza);
 Expected Output: ['anchovies', 'pineapple']
 
+Describe pepCheck.addEventListener()
+
+Test: "it should push the checked topping to the toppingsList of myPizza"
+Code: pepCheck.addEventListener('change', e=>{});
+Expected Output: ['pepperoni']
