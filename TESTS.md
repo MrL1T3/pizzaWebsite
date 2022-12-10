@@ -13,6 +13,10 @@ Expected Output: ['anchovies', 'pineapple']
 
 Describe pepCheck.addEventListener()
 
-Test: "it should push the checked topping to the toppingsList of myPizza"
+Test: "It should push the checked topping to the toppingsList of myPizza"
+Code: pepCheck.addEventListener('change', e=>{});
+Expected Output: ['pepperoni']
+
+Test: "It should not add an excess element to the array if it is already present"
 Code: pepCheck.addEventListener('change', e=>{});
 Expected Output: ['pepperoni']
