@@ -5,5 +5,6 @@ function Pizza (size, toppingsList) {
 
 const myPizza = new Pizza("medium", ["anchovies", "pineapple"])
 
-function gatherToppings(Pizza)
-  console.log (Pizza.toppingslist);
+function gatherToppings() {
+  console.log (myPizza.toppingslist);
+}
