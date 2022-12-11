@@ -29,5 +29,12 @@ Expected Output: []
 Describe: window.addEventListener
 
 Test: "It should check if the topping is already selected or not"
-Code for (let i = 0; i < topInputs.length; i++) {}
+Code: for (let i = 0; i < topInputs.length; i++) {}
 Expected Output: [pepperoni: true, olives: false], [pepperoni: false, olives: false], [pepperoni: false, olives: true], [pepperoni: true, olives: true]
+
+
+Describe: Pizza.price
+
+Test: "It should return the price of the selected size of pizza"
+Code: let sizePrice = selectedOption * 3/4 (html option chosen 16 inch)
+Expected Output: 12
