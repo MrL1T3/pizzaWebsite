@@ -24,22 +24,4 @@ window.addEventListener('load', (event) =>{
       myPizza.toppingsList[topInputs[i].id] = false;
     }
   }
-
-  // const pepCheck = document.getElementById('pepperoni');
-  // pepCheck.addEventListener('change', e=>{
-  //   if(e.target.checked === true){
-  //     if (myPizza.toppingslist.includes('pepperoni') === false){
-  //       myPizza.toppingslist.push('pepperoni')
-  //     }
-  //     gatherToppings();
-  //   }
-  //   else if (e.target.checked === false){
-  //     if (myPizza.toppingslist.includes('pepperoni')){
-  //       myPizza.toppingslist.splice(myPizza.toppingslist.indexOf('pepperoni'), 1)
-  //     }
-  //     gatherToppings
-  //   }
-  // });
-
-  
 });
