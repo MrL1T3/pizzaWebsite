@@ -24,3 +24,10 @@ Expected Output: ['pepperoni']
 Test: "It should remove the topping when the box is unchecked"
 Code: pepCheck.addEventListener('change', e=>{});
 Expected Output: []
+
+
+Describe: window.addEventListener
+
+Test: "It should check if the topping is already selected or not"
+Code for (let i = 0; i < topInputs.length; i++) {}
+Expected Output: [pepperoni: true, olives: false], [pepperoni: false, olives: false], [pepperoni: false, olives: true], [pepperoni: true, olives: true]
