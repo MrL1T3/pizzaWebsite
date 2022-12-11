@@ -1,29 +1,45 @@
-const myPizza = new Pizza('', [])
 function Pizza (size, toppingsList) {
   this.size = size
-  this.toppingslist = toppingsList
+  this.toppingsList = {}
 }
+const myPizza = new Pizza('', {})
 
 window.addEventListener('load', (event) =>{
-  function gatherToppings() {
-    console.log (myPizza.toppingslist);
+
+  const toppingsForm = document.getElementById('toppings-form');
+  let topInputs = toppingsForm.getElementsByTagName('input');
+  for (let i = 0; i < topInputs.length; i++) { 
+    if (topInputs[i].type === 'checkbox') {
+      topInputs[i].addEventListener('change', function() {
+        const cBox = this;
+        if (myPizza.toppingsList[cBox.id] === false){
+          myPizza.toppingsList[cBox.id] = true;
+          console.log(myPizza.toppingsList)
+        }
+        else {
+          myPizza.toppingsList[cBox.id] = false;
+          console.log(myPizza.toppingsList)
+        }
+      });
+      myPizza.toppingsList[topInputs[i].id] = false;
+    }
   }
 
-  const pepCheck = document.getElementById('pepperoni');
-  pepCheck.addEventListener('change', e=>{
-    if(e.target.checked === true){
-      if (myPizza.toppingslist.includes('pepperoni') === false){
-        myPizza.toppingslist.push('pepperoni')
-      }
-      gatherToppings();
-    }
-    else if (e.target.checked === false){
-      if (myPizza.toppingslist.includes('pepperoni')){
-        myPizza.toppingslist.splice(myPizza.toppingslist.indexOf('pepperoni'), 1)
-      }
-      gatherToppings
-    }
-  });
+  // const pepCheck = document.getElementById('pepperoni');
+  // pepCheck.addEventListener('change', e=>{
+  //   if(e.target.checked === true){
+  //     if (myPizza.toppingslist.includes('pepperoni') === false){
+  //       myPizza.toppingslist.push('pepperoni')
+  //     }
+  //     gatherToppings();
+  //   }
+  //   else if (e.target.checked === false){
+  //     if (myPizza.toppingslist.includes('pepperoni')){
+  //       myPizza.toppingslist.splice(myPizza.toppingslist.indexOf('pepperoni'), 1)
+  //     }
+  //     gatherToppings
+  //   }
+  // });
 
   
 });
