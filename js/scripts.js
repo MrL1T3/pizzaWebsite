@@ -12,17 +12,18 @@ Pizza.prototype.price = function() {
     }
   }
   let pizzaPrice = ((3/4) * (parseInt(size.value)) + (numToppings * 0.25));
-  console.log(pizzaSize);
-  console.log(pizzaPrice);
+  return pizzaPrice;
 }
 const myPizza = new Pizza({})
 
 window.addEventListener('load', (event) =>{
   const toppingsForm = document.getElementById('toppings-form');
+  const calc = document.getElementById('calculate');
   let topInputs = toppingsForm.getElementsByTagName('input');
   for (let i = 0; i < topInputs.length; i++) { 
     if (topInputs[i].type === 'checkbox') {
       topInputs[i].addEventListener('change', function() {
+        document.getElementById('price-place').innerHTML = '';
         const cBox = this;
         if (myPizza.toppingsList[cBox.id] === false){
           myPizza.toppingsList[cBox.id] = true;
@@ -34,4 +35,7 @@ window.addEventListener('load', (event) =>{
       myPizza.toppingsList[topInputs[i].id] = false;
     }
   }
+  calc.addEventListener('click', function() {
+    document.getElementById('price-place').innerHTML ='Your pizza will cost ' + myPizza.price() + ' dollars.';
+  })
 });
