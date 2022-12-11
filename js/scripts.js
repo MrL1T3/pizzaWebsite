@@ -5,10 +5,19 @@ function Pizza (toppingsList) {
 Pizza.prototype.price = function() {
   const size = document.getElementById('size');
   let pizzaSize = size.options[size.selectedIndex].text;
-  let sizePrice = (3/4) * (parseInt(size.value));
 
+  numToppings = 0;
+  for (var k in this.toppingsList) {
+    if (this.toppingsList[k] === true) {
+      numToppings ++;
+    }
+  }
+  let toppingsPrice = numToppings * 0.25;
+  let pizzaPrice = ((3/4) * (parseInt(size.value)));
+  console.log(numToppings);
+  console.log(toppingsPrice);
   console.log(pizzaSize);
-  console.log(sizePrice);
+  console.log(pizzaPrice);
 }
 const myPizza = new Pizza({})
 
