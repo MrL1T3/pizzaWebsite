@@ -38,3 +38,8 @@ Describe: Pizza.price
 Test: "It should return the price of the selected size of pizza"
 Code: let sizePrice = selectedOption * 3/4 (html option chosen 16 inch)
 Expected Output: 12
+
+Test: "It should return the price of all toppings selected"
+Code: for item in toppingsList {numToppings++} 
+  let price = numToppings X 0.25
+Expected Output: 0.5
