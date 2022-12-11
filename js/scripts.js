@@ -1,8 +1,16 @@
-function Pizza (size, toppingsList) {
-  this.size = size
-  this.toppingsList = {}
+function Pizza (toppingsList) {
+  this.toppingsList = toppingsList
 }
-const myPizza = new Pizza('', {})
+
+Pizza.prototype.price = function() {
+  const size = document.getElementById('size');
+  let pizzaSize = size.options[size.selectedIndex].text;
+  let sizePrice = (3/4) * (parseInt(size.value));
+
+  console.log(pizzaSize);
+  console.log(sizePrice);
+}
+const myPizza = new Pizza({})
 
 window.addEventListener('load', (event) =>{
 
